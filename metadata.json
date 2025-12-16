@@ -1,0 +1,4 @@
+{
+  "name": "Dynamic Iframe Viewer",
+  "description": "A full-screen iframe application that dynamically updates its source based on URL query parameters."
+}
